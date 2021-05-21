@@ -1,1 +1,21 @@
-<h1 class="title">Index</h1>
+     
+<% @posts.each do |p| %>
+<div class="container" style="opacity:0.96">
+  <div class="card ">
+  <div class="card-header bg-dark" >
+     <h3>
+         <span> <%= link_to p.title, p, style:"text-decoration:none;color:white" %></span>
+         <span style="float:right"> <%= link_to "Destroy", post_path(p),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } , class:"btn btn-danger"%></span>
+     </h3>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p><%= p.content%></p> 
+    </blockquote>
+  </div>
+</div>
+</div>
+<br>
+<% end %>

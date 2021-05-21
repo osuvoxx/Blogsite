@@ -1,0 +1,11 @@
+<%= simple_form_for([@post, @post.comments.build]) do |f| %>
+         <div class="control">
+            <%= f.input :name,error: 'Title Required',input_html: {class:'container form-control mb-2'},autofocus: true %>
+         </div>
+         <div class="control">
+            <%= f.input :comment,input_html: {class:'section form-control mb-2'}, as: :text %>
+         </div>
+
+        <div><%= f.button :submit ,class:"btn btn-warning " %></div>
+
+    <% end %>

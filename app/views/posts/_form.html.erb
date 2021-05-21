@@ -1,0 +1,12 @@
+ 
+    <%= simple_form_for @post do |f| %>
+         <div class="control">
+            <%= f.input :title,input_html: {class:'container form-control mb-2'},autofocus: true, require: false %>
+         </div>
+         <div class="control">
+            <%= f.input :content,input_html: {class:'section form-control mb-2'}, as: :text , required: true%>
+         </div>
+
+       <div class="text-center my-3"><%= f.button :submit ,class:"btn btn-primary " %></div>
+
+     <% end %>

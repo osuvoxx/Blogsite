@@ -1,0 +1,33 @@
+
+
+<div class="container my-5 " style="opacity:0.95">
+ <div class="card border border-dark">
+   <h2 class="card-header bg-lite  text-center">
+   <%= @post.title%>    
+   <%= link_to '&times;'.html_safe, posts_path, class:"close"%>
+   </h2>
+   <div class="card-body bg-lite text-dark">
+     <h5 class="card-title ">  <%= @post.content %> </h5>
+     <%# <a href="#" >Go somewhere</a> %>
+     <%= link_to "Edit", edit_post_path(@post),class:"btn btn-primary"%>
+      <%= link_to "Destroy", post_path(@post),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } ,class:"btn btn-danger"%>
+
+   </div>
+ </div>
+ <br/>
+ <div class="jumbotron jumbotron-fluid pt-3 text-white" style="background-color:rgba(0,0,0,0.7)">
+  <div class="container">
+    <h4><strong><%= @post.comments.count %></strong> Comments</h4>
+    <hr style="background-color:white">
+    <%= render @post.comments %>
+    <br>
+    <h5 style="text-align:center">Leave a Reply</h5>
+    
+    <%= render 'comments/form'%>
+  </div>
+</div>
+</div>
+
+

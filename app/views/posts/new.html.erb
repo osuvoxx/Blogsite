@@ -1,0 +1,9 @@
+
+
+<div class="container my-5 py-2 border border-dark rounded text-white" style="background-color:rgba(0,0,0,0.6)">
+   <h1 class="title"> 
+   New Post 
+   <%= link_to '&times;'.html_safe, posts_path, class:"close"%>
+   </h1>
+   <%= render "form" %>
+ </div>
